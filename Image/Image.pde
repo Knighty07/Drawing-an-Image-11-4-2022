@@ -4,6 +4,7 @@
 int appWidth, appHeight;
 float imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight;
 PImage pic;
+Boolean nightMode=false;
 //
 size(1000,800); //Landscape
 //Copy Display Orientation
@@ -18,6 +19,14 @@ imageBackgroundWidth = appWidth-1;
 imageBackgroundHeight = appHeight-1;
 //
 //Rectangle Layout and Image drawing to CANVAS
+//if() {} else for a Binary Choice, no single IF
+//tint(50,255); //use 1/2 tint value for white  (I.E. 128/256=1/2)
+//tint (128,128,50); //RGB 
+tint(153, 204, 126); //RGB: Night Mode
+tint (255, 255, 255); //RBG: Daytime Mode
 rect( imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight);
+//
+if (nightMode == false);tint (255,255,255);
+if (nightMode == true); tint (153,204,126);
 //
 image( pic, imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight);
