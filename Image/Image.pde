@@ -9,7 +9,7 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 PImage pic;
 Boolean nightMode=false;
 //              
-size(1200, 800); //Landscape
+size(1000,800); //Landscape
 //Copy Display Orientation
 appWidth = width;
 appHeight = height;
@@ -40,19 +40,18 @@ if ( appWidth >= picWidth ) {
 } else {
   if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
   if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
-}
+  //Image smaller than CANVAS needs seperate algorithm 
+ }
 if ( appHeight >= picHeight ) {
   picWidthAdjusted = picWidth;
 } else {
   if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
   if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
 }
-  //Image smaller than CANVAS needs seperate algorithm
-  println (appWidth, imageWidthRatio);
-  println (appHeight, imageHeightRatio);
-  
+println (appWidth, imageWidthRatio);
+println (appHeight, imageHeightRatio);
 picWidthAdjusted = appWidth * imageWidthRatio;
-picHeightAdjusted = appHeight * imageHeightRatio;
+picHeightAdjusted = appWidth * imageHeightRatio;
 //
 println (appWidth, picWidth, picWidthAdjusted);
 println (appHeight, picHeight, picHeightAdjusted);
