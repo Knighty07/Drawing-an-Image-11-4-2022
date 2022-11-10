@@ -15,15 +15,15 @@ float bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight;
 
 void setup()
 {
-  size(800, 600); //Landscape
+  size(1000, 800); //Landscape
   //Copy Display Algorithm from Hello World
   appWidth = width;
   appHeight = height;
   //
   //Image Dimensions for Aspect Ratio
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth = 800;
-  int picHeight = 600;
+  int picWidth = 612;
+  int picHeight = 344;
   //
   float smallerDimension, largerDimension;
   //Image Orientation: Landscape, Portrait, Square
@@ -77,6 +77,7 @@ void setup()
   rect(topHalfX, topHalfY, topHalfWidth, topHalfHeight);
   rect(bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight);
   
+  //Generating two shapes to add images in
   topHalfX= appWidth * 1/4;
   topHalfY= appHeight * 1/12;
   topHalfWidth= appWidth * 1/2;
