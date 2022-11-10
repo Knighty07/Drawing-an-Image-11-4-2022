@@ -2,10 +2,11 @@
 //Global Variables
 int appWidth, appHeight;
 Boolean widthLarger=false, heightLarger=false;
+Boolean widthLarger2=false, heightLarger2=false;
 float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 float imageWidthRatio=0.0, imageHeightRatio=0.0;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-PImage pic;
+PImage pic, pic2, pic3;
 Boolean nightMode=false;
 int tintDayMode=255, tintDayModeOpacity;
 int tintRed=70, tintGreen=70, tintBlue=48, tintNightModeOpacity=20;
@@ -15,17 +16,23 @@ float bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight;
 
 void setup()
 {
-  size(1000, 800); //Landscape
+  size(1200, 800); //Landscape
   //Copy Display Algorithm from Hello World
   appWidth = width;
   appHeight = height;
   //
+
+
   //Image Dimensions for Aspect Ratio
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 612;
   int picHeight = 344;
+  int pic2Width = 474 ;//Landscape
+  int pic2Height= 472 ;//Landscape
+  // int pic3Width =;
+  // int pic3Height=;//
+  float smallerDimension, largerDimension, smallerDimension2, largerDimension2;
   //
-  float smallerDimension, largerDimension;
   //Image Orientation: Landscape, Portrait, Square
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
@@ -35,6 +42,17 @@ void setup()
     largerDimension = picHeight;
     smallerDimension = picWidth;
     heightLarger = true;
+  }
+
+  if ( pic2Width >= pic2Height ) { //True if Landscape or Square
+    largerDimension2 = pic2Width;
+    smallerDimension2 = pic2Height;
+    widthLarger2 = true;
+    //Landscaoe Large Image to larger space OR smaller space
+  } else { //False if Portrait
+    largerDimension2 = pic2Height;
+    smallerDimension2 = pic2Width;
+    heightLarger2 = true;
   }
   //
   float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
@@ -68,6 +86,10 @@ void setup()
   //Population
   //
   pic = loadImage("../Used Images/Space image.jpg");
+  pic = loadImage("../Used Images/Glitch.jpg");
+  pic = loadImage("");
+
+
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
@@ -76,7 +98,7 @@ void setup()
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   rect(topHalfX, topHalfY, topHalfWidth, topHalfHeight);
   rect(bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight);
-  
+
   //Generating two shapes to add images in
   topHalfX= appWidth * 1/4;
   topHalfY= appHeight * 1/12;
@@ -86,7 +108,7 @@ void setup()
   bottomHalfY= appHeight * 1/12;
   bottomHalfWidth= appHeight *1/2;
   bottomHalfHeight= appHeight * 2/7;
- 
+
 
   //
   //Background Image must be single executed code
@@ -98,6 +120,8 @@ void setup()
 }//End setup
 //
 void draw() {
+  image(topHalfX, topHalfY, topHalfWidth, topHalfHeight);
+  image(bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight);
 }//End draw
 void keyPressed() {
 }//End keyPressed
