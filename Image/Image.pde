@@ -86,8 +86,8 @@ void setup()
   //Population
   //
   pic = loadImage("../Used Images/Space image.jpg");
-  pic = loadImage("../Used Images/Glitch.jpg");
-  pic = loadImage("");
+  pic2 = loadImage("../Used Images/Glitch.jpg");
+  pic3 = loadImage("");
 
 
   backgroundImageX = appWidth*0;
