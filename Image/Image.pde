@@ -21,7 +21,7 @@ void setup()
   //fullscreen(); //displayWidth, displayHeight
   appWidth = width;
   appHeight = height;
-  //
+  //ok
   //Population
   pic = loadImage("../Used Images/Space image.jpg"); //NEEDS FIX
   pic2 = loadImage("../Used Images/Glitch.JPG"); //NEEDS FIX
